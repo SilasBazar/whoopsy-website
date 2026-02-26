@@ -1,0 +1,430 @@
+:root {
+    --green: #86ce43;
+    --black: #1d1c00;
+    --white: #e5e6cc;
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    padding: 20px 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2rem;
+    color: var(--green);
+    text-shadow: 3px 3px 0px var(--black);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo:hover {
+    text-shadow: 3px 3px 0px var(--green);
+    color: var(--black);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: var(--green);
+    opacity: 0.1;
+    transform: rotate(45deg);
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: clamp(4rem, 15vw, 10rem);
+    color: var(--green);
+    text-shadow: 4px 4px 0px var(--black);
+    margin-bottom: 20px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.hero h1:hover {
+    text-shadow: 4px 4px 0px var(--green);
+    color: var(--black);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 4px 4px 0px var(--green);
+    padding: 40px;
+}
+
+.about-card h3 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-card p {
+    color: var(--black);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat {
+    background: var(--green);
+    border-radius: var(--border-radius);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 4px 4px 0px var(--black);
+}
+
+.stat-number {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3rem;
+    color: var(--black);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+/* Game Section */
+.game {
+    padding: 100px 0;
+}
+
+.game-banner {
+    background: var(--green);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-banner span {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+.game-showcase {
+    background: var(--black);
+    border-radius: var(--border-radius);
+    padding: 60px;
+    position: relative;
+}
+
+.game-showcase::before {
+    content: '[ GAME_ID: 001 ]';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--black);
+    padding: 0 15px;
+    font-size: 0.9rem;
+    color: var(--green);
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.game-image-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.game-image-side img {
+    height: 400px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--border-radius);
+    box-shadow: 4px 4px 0px var(--green);
+    display: block;
+}
+
+.game-content-side h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3.5rem;
+    color: var(--green);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.game-tagline {
+    font-size: 1.5rem;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.game-description {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* Philosophy Section */
+.philosophy {
+    padding: 100px 0;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.philosophy-card {
+    background: var(--black);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    transition: all 0.3s;
+}
+
+.philosophy-card:hover {
+    background: var(--green);
+}
+
+.philosophy-card:hover .philosophy-number,
+.philosophy-card:hover .philosophy-text {
+    color: var(--black);
+}
+
+.philosophy-number {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 4rem;
+    color: var(--green);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.philosophy-title {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.philosophy-card:hover .philosophy-title {
+    color: var(--black);
+}
+
+.philosophy-text {
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    padding: 60px 0;
+    background: var(--black);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.copyright {
+    color: var(--white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-showcase {
+        padding: 40px 20px;
+    }
+
+    .game-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .game-image-side {
+        order: -1;
+    }
+
+    .game-content-side h2 {
+        font-size: 2.5rem;
+    }
+
+    .game-tagline {
+        font-size: 1.2rem;
+    }
+
+    .game-description {
+        font-size: 1rem;
+    }
+
+    .game-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Glitch effect on scroll */
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+.glitch-text:hover {
+    animation: glitch 0.3s infinite;
+}
