@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3D Button Styles - Matching original buttons.css */
+.btn-3d {
+  /* Default state: flush to page, NO bevel visible */
+  transform: translate(0px, 0px);
+  box-shadow: 
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.btn-3d:hover {
+  /* Hover state: pops out toward viewer */
+  transform: translate(-10px, -10px);
+  box-shadow: 
+    1px 1px 0px 0px #86ce43,
+    2px 2px 0px 0px #86ce43,
+    3px 3px 0px 0px #86ce43,
+    4px 4px 0px 0px #86ce43,
+    5px 5px 0px 0px #86ce43,
+    6px 6px 0px 0px #86ce43,
+    7px 7px 0px 0px #86ce43,
+    8px 8px 0px 0px #86ce43,
+    9px 9px 0px 0px #86ce43,
+    10px 10px 0px 0px #86ce43,
+    11px 11px 0px 0px #86ce43;
+}
+
+.btn-3d:active {
+  /* Active state: snaps back flush - NO bevel visible */
+  transform: translate(0px, 0px);
+  box-shadow: 
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43,
+    0px 0px 0px 0px #86ce43;
+  transition: transform 0.02s ease-out, box-shadow 0.02s ease-out;
+}
+
+.btn-flat {
+  transition: background-color 0.2s ease-out;
+}
+
+.btn-flat:hover {
+  background-color: #e5e6cc;
+}
+
+/* Custom spark animations */
+@keyframes spark-1 {
+  0% { 
+    opacity: 1; 
+    transform: rotate(15deg) translateY(-16px) scale(0); 
+  }
+  20% { 
+    opacity: 1; 
+    transform: rotate(15deg) translateY(-19px) scale(1); 
+  }
+  80% { 
+    opacity: 1; 
+    transform: rotate(15deg) translateY(-27px) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(15deg) translateY(-31px) scale(0); 
+  }
+}
+
+@keyframes spark-2 {
+  0% { 
+    opacity: 1; 
+    transform: rotate(45deg) translateY(-16px) scale(0); 
+  }
+  20% { 
+    opacity: 1; 
+    transform: rotate(45deg) translateY(-19px) scale(1); 
+  }
+  80% { 
+    opacity: 1; 
+    transform: rotate(45deg) translateY(-32px) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(45deg) translateY(-36px) scale(0); 
+  }
+}
+
+@keyframes spark-3 {
+  0% { 
+    opacity: 1; 
+    transform: rotate(75deg) translateY(-16px) scale(0); 
+  }
+  20% { 
+    opacity: 1; 
+    transform: rotate(75deg) translateY(-19px) scale(1); 
+  }
+  80% { 
+    opacity: 1; 
+    transform: rotate(75deg) translateY(-25px) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: rotate(75deg) translateY(-29px) scale(0); 
+  }
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.animate-spark-1 {
+  animation: spark-1 0.4s ease-out forwards;
+}
+
+.animate-spark-2 {
+  animation: spark-2 0.4s ease-out forwards;
+}
+
+.animate-spark-3 {
+  animation: spark-3 0.4s ease-out forwards;
+}
+
+/* Glitch text on hover */
+.hover\:glitch:hover {
+  animation: glitch 0.3s infinite;
+}
+
+/* Custom grid for game showcase */
+.grid-cols-auto-1fr {
+  grid-template-columns: auto 1fr;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d1c00;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #86ce43;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5e6cc;
+}
